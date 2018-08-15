@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<title>THE PITCH DECK CREATOR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#fill_the_data" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Start being an Entrpreneur</a>
+    <a href="logout.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGOUT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hide-small w3-right">Welcome    <?php echo $_SESSION["user"];?>!!</a>
+  </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#fill_the_data" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Start being an Entrpreneur</a>
+    <a href="Home.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOGOUT</a>  
+</div>
+
+<!-- Page content -->
+<div class="w3-container w3-content w3-padding-64" style="max-width:1200px" id="fill_the_data">
+  
+    <h2 class="w3-wide w3-center">Enter the apt details</h2>
+    <p class="w3-opacity w3-center"><i>Welcome to pitch deck</i></p>
+    <form class="w3-container" action="main.php" method="POST" >
+<div class="container">
+   <div class="form-group">
+  <table class="table">
+    <thead>
+     
+    </thead>
+    <tbody>
+      <tr>
+        <td><label>Company Name:</label><input type="text"  class="form-control" placeholder="Type your company name" required name="company"/></td>
+		</tr>
+        <tr>
+		<td><label>Product/Service Description:</label><input type="text" class="form-control" placeholder="Mention your company or service description" required name="desc"/></td>
+        </tr>
+		<tr>
+		<td><label>Market Size:</label><input type="text" class="form-control" placeholder="Enter your market size" required name="market"/></td>
+      </tr>
+      <tr>
+        <td><label>Customer Segmentation:</label><input type="text" class="form-control" placeholder="Enter your Customer Segmentation" required name="CS"></td>
+        </tr>
+		<tr>
+		<td><label>Unique Selling Proposition:</label><input type="text" class="form-control" placeholder="Enter USP" required name="USP"></td>
+         </tr>
+      <tr>
+        <td><label>Customer Retention Strategy:</label><input type="text" class="form-control" placeholder="Enter CRS" required required name="CRS"></td>
+       </tr>
+	   <tr>
+	   <td><label>Revenue Model:</label><input type="text" class="form-control" placeholder="Enter revenue model" required name="Revenue"></td>
+		</tr>
+		<tr>
+		<td><label>Scalability:</label><input type="text" class="form-control" placeholder="Enter Scaability" required name="scale"></td>
+		</tr>
+		<tr>
+		<td><label>CLV:CAC</label><input type="text" class="form-control" placeholder="Enter ratio" required name="ratio"></td>
+		</tr>
+		<tr>
+		<td><label>Team Composition:</label><input type="text" class="form-control" placeholder="Enter Team Composition" required name="team"></td>
+		</tr>
+		<tr>
+		<td><label>Financial Projection:</label><input type="text" class="form-control" placeholder="Enter your financial projection" required name="finance"></td>
+		</tr>
+		<tr>
+		<td><label>Company Location:</label><input type="text" class="form-control" placeholder="Enter company location" required name="location"></td>
+		</tr>
+		
+	</tbody>
+  </table>
+  </div>
+</div>
+<center><center><button class="w3-button w3-black w3-section w3-left" type="submit">Get Your PitchDeck</button></center></center>
+</form>
+
+      
+        
+      
+</div>    
+  
+ 
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+ 
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

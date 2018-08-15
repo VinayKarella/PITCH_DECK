@@ -1,0 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]))
+{
+	include("op2.html");
+}
+else
+header("Location:home.html");
+?>
